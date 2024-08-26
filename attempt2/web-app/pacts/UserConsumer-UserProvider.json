@@ -1,0 +1,64 @@
+{
+  "consumer": {
+    "name": "UserConsumer"
+  },
+  "interactions": [
+    {
+      "description": "a request for users",
+      "providerState": "users exist",
+      "request": {
+        "method": "GET",
+        "path": "/users"
+      },
+      "response": {
+        "body": [
+          {
+            "name": "John Doe"
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "a request to create a user",
+      "providerState": "user can be created",
+      "request": {
+        "body": {
+          "name": "Jane Doe"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/users"
+      },
+      "response": {
+        "body": {
+          "name": "Jane Doe"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 201
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "13.1.2"
+    },
+    "pactRust": {
+      "ffi": "0.4.22",
+      "models": "1.2.3"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "UserProvider"
+  }
+}
